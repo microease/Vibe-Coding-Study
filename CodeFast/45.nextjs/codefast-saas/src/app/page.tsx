@@ -4,6 +4,7 @@ export default function Home() {
   return (
     <main>
       <button className="btn">Get started</button>
+      <button className="btn">Start now!</button>
     </main>
   );
 }
