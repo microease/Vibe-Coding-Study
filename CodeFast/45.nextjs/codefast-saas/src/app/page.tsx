@@ -1,6 +1,7 @@
 "use client";
 
 import ButtonLogin from "@/components/ButtonLogin";
+import FAQsListItem from "@/components/FAQsListItem";
 export default function Home() {
   const isLoggedIn = true;
   const name = "YankaiHu"; // Simulating a logged-in user name
@@ -15,22 +16,22 @@ export default function Home() {
   return (
     <main>
       {/* Header */}
-      <section className="bg-base-200 shadow-lg">
+      <section className="bg-base-200 ">
         <div className="flex justify-between px-8 max-w-3xl mx-auto">
           <div className="flex items-center font-bold text-xl">
             CodeFastSaas
           </div>
-          <div className="space-x-4 max-md:hidden">
-            <a href="" className="link link-hover">
+          <div className="space-x-4 max-md:hidden flex items-center">
+            <a href="#features" className="link link-hover">
               Pricing
             </a>
-            <a href="" className="link link-hover">
+            <a href="#faqs" className="link link-hover">
               FAQs
             </a>
-            <a href="" className="link link-hover">
+            <a href="#faqs" className="link link-hover">
               About
             </a>
-            <a href="" className="link link-hover">
+            <a href="#faqs" className="link link-hover">
               Contact
             </a>
           </div>
@@ -40,7 +41,10 @@ export default function Home() {
         </div>
       </section>
       {/* Hero Section */}
-      <section className="bg-base-100 px-8 text-center py-32  max-w-3xl mx-auto">
+      <section
+        className="bg-base-100 px-8 text-center py-32  max-w-3xl mx-auto"
+        id=""
+      >
         <h1 className="title extra-large text-5xl lg:text-6xl font-bold">
           Collect customer feedback to build better products
         </h1>
@@ -52,7 +56,7 @@ export default function Home() {
         <p>Hey:{name}</p>
       </section>
       {/* Features Section */}
-      <section className="bg-base-200">
+      <section className="bg-base-200" id="features">
         <div className="py-32 px-8 max-w-3xl mx-auto">
           <p className="text-sm text-red-500">Price</p>
           <h2 className="title extra-large text-3xl lg:text-4xl font-extrabold text-center text-primary">
@@ -93,6 +97,24 @@ export default function Home() {
               />
             </ul>
           </div>
+        </div>
+      </section>
+      {/* FAQs Section */}
+      <section className="bg-base-100" id="faqs">
+        <div className="py-32 px-8 max-w-3xl mx-auto">
+          <p className="text-sm text-red-500 text-center">FAQs</p>
+          <h2 className="title extra-large text-3xl lg:text-4xl font-extrabold text-center text-primary">
+            Frequently Asked Questions
+          </h2>
+          <ul className="list-none space-y-4 mt-8 max-w-lg mx-auto">
+            {[
+              { question: "what do I get exactly？", answer: "Loreum Ipseum" },
+              { question: "Can I get a refund？", answer: "Loreum Ipseum" },
+              { question: "I have another question", answer: "Loreum Ipseum" },
+            ].map((qa) => (
+              <FAQsListItem key={qa.question} qa={qa} />
+            ))}
+          </ul>
         </div>
       </section>
     </main>
