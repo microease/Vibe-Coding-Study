@@ -10,7 +10,11 @@ const ButtonLogin = (props: ButtonLoginProps) => {
   const personal = { name: "YankaiHu", age: 30 };
 
   if (props.isLoggedIn) {
-    return <Link href="/dashboard">Welcome Back,{props.name}，</Link>;
+    return (
+      <Link href="/dashboard" className="btn btn-primary">
+        Welcome Back,{props.name}
+      </Link>
+    );
   } else {
     return <button>Login</button>;
   }
