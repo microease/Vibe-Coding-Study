@@ -2,6 +2,9 @@
 
 import ButtonLogin from "@/components/ButtonLogin";
 import FAQsListItem from "@/components/FAQsListItem";
+import Image from "next/image";
+import productDemo from "../../public/assets/productDemo.jpeg";
+
 export default function Home() {
   const isLoggedIn = true;
   const name = "YankaiHu"; // Simulating a logged-in user name
@@ -42,18 +45,27 @@ export default function Home() {
       </section>
       {/* Hero Section */}
       <section
-        className="bg-base-100 px-8 text-center py-32  max-w-3xl mx-auto"
-        id=""
+        className="bg-base-100 px-8 text-center py-32  max-w-5xl mx-auto flex flex-col gap-8 items-center lg:flex-row lg:gap-16"
+        id="feature"
       >
-        <h1 className="title extra-large text-5xl lg:text-6xl font-bold">
-          Collect customer feedback to build better products
-        </h1>
-        <div className="opacity-50 text-center p-4 ">
-          Create a feeedback board in minutes, prioritize features, and build
-          products your customers will love.
+        <Image
+          src="/assets/productDemo.jpeg"
+          alt="Product Demo"
+          width={500}
+          height={300}
+          className="w-96 mx-auto"
+        />
+        <div>
+          <h1 className="title extra-large text-5xl lg:text-6xl font-bold">
+            Collect customer feedback to build better products
+          </h1>
+          <div className="opacity-50 text-center p-4 ">
+            Create a feeedback board in minutes, prioritize features, and build
+            products your customers will love.
+          </div>
+          <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
+          <p>Hey:{name}</p>
         </div>
-        <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
-        <p>Hey:{name}</p>
       </section>
       {/* Features Section */}
       <section className="bg-base-200" id="features">
