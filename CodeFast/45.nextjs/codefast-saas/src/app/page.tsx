@@ -51,7 +51,7 @@ export default function Home() {
         <Image
           src="/assets/productDemo.jpeg"
           alt="Product Demo"
-          width={500}
+          width={50 0}
           height={300}
           className="w-96 mx-auto"
         />
