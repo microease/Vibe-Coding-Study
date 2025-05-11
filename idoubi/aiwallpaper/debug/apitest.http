@@ -1,0 +1,19 @@
+@baseUri=http://127.0.0.1:3000/api
+
+#test
+POST {baseUri}/test
+
+#gen-wallpaper 
+
+
+###
+POST {baseUri}/gen-wallpaper
+Content-Type: application/json
+
+{
+    "description": "happy birthday"
+}
+
+### get-wallpaper
+GET {baseUri}/get-wallpaper
+
